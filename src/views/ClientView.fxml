@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="400.0" maxWidth="600.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: bbbdbd;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClientController">
+   <children>
+      <Label layoutX="17.0" layoutY="56.0" text="Client Capabilities" textFill="#194321">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <Button defaultButton="true" layoutX="23.0" layoutY="109.0" mnemonicParsing="false" onAction="#viewProducts" prefHeight="25.0" prefWidth="129.0" text="View Products" />
+      <Button layoutX="23.0" layoutY="153.0" mnemonicParsing="false" onAction="#viewOrderHistory" prefHeight="25.0" prefWidth="129.0" text="View Order History" />
+      <Button layoutX="23.0" layoutY="196.0" mnemonicParsing="false" onAction="#orderProduct" prefHeight="25.0" prefWidth="129.0" text="Order a Product" />
+      <Button layoutX="23.0" layoutY="239.0" mnemonicParsing="false" onAction="#cancelOrder" prefHeight="25.0" prefWidth="129.0" text="Cancel an Order" />
+      <Button layoutX="23.0" layoutY="322.0" mnemonicParsing="false" onAction="#clientLogout" prefHeight="25.0" prefWidth="129.0" text="Logout" />
+      <Pane fx:id="paneOrderProduct" layoutX="176.0" layoutY="65.0" prefHeight="282.0" prefWidth="375.0" style="-fx-border-color: Black; -fx-border-width: 1;" visible="false">
+         <effect>
+            <Glow level="0.0" />
+         </effect>
+         <children>
+            <Button defaultButton="true" layoutX="123.0" layoutY="186.0" mnemonicParsing="false" onAction="#submitOrderProduct" text="Submit" />
+            <TextField fx:id="txtQuantity" layoutX="150.0" layoutY="129.0" />
+            <TextField fx:id="txtPID" layoutX="150.0" layoutY="83.0" />
+            <Label layoutX="48.0" layoutY="87.0" text="Product ID (PID)" />
+            <Label layoutX="85.0" layoutY="133.0" text="Quantity" />
+            <Label fx:id="lblOrderProduct" layoutX="14.0" layoutY="241.0" prefHeight="17.0" prefWidth="356.0" text="Click 'View Products' for PID &amp; Quantity available" textFill="#803131" />
+            <Label layoutX="127.0" layoutY="27.0" text="Order a Product">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button cancelButton="true" layoutX="190.0" layoutY="186.0" mnemonicParsing="false" onAction="#clearOrderProduct" prefHeight="25.0" prefWidth="54.0" text="Clear" />
+         </children> 
+      </Pane>
+      <Pane fx:id="paneCancelOrder" layoutX="176.0" layoutY="65.0" prefHeight="282.0" prefWidth="375.0" style="-fx-border-color: Blue; -fx-border-width: 1;" visible="false">
+         <effect>
+            <Glow level="0.0" />
+         </effect>
+         <children>
+            <Button defaultButton="true" layoutX="112.0" layoutY="169.0" mnemonicParsing="false" onAction="#submitCancelOrder" text="Submit" />
+            <TextField fx:id="txtOID" layoutX="159.0" layoutY="93.0" />
+            <Label layoutX="61.0" layoutY="97.0" text="Order ID (OID)" />
+            <Label fx:id="lblCancelOrder" layoutX="14.0" layoutY="232.0" prefHeight="17.0" prefWidth="346.0" text="Click 'View Order History' for OID to cancel (delete order)" textFill="#803131" />
+            <Label layoutX="116.0" layoutY="28.0" text="Cancel Your Order">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button cancelButton="true" layoutX="188.0" layoutY="169.0" mnemonicParsing="false" onAction="#clearCancelOrder" text="Clear" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
